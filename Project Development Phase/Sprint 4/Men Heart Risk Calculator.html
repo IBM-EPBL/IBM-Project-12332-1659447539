@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    		<title>Calculator: Cardiovascular risk assessment - UpToDate</title>
+       <link rel="stylesheet" href="womencal.css">
+
+    
+<body class="sty" background="./male 1 new.jpg" >
+
+ 
+
+
+
+
+<form name="Framingham08_M_Patient_form" id="xhash_Framingham08_M_Patient_form" action="" onsubmit="return false;" onkeydown="formKeyDown(event);" onkeypress="resetInTime(); return validNumberField(event);" onkeyup="Framingham08_M_Patient_fx();" onreset="document.getElementById('inputchk').innerHTML=inputchktxt; ">
+
+<br>&nbsp;<br>
+
+<div id="calc_main" >
+<center>
+<span class="medCalcFontIO">
+  Input
+</span>
+<br>&nbsp;<br>
+<table cellpadding="3" cellspacing="0" summary="EBMcalc Table">
+<tbody><tr><td align="right" width="42%"><span class="medCalcFontOneBold">Age</span> </td>
+<td align="left" valign="top" nowrap="nowrap" width="5%">&nbsp; <input type="text" name="Age_param" size="6" value="" onblur="Framingham08_M_Patient_fx(); minMaxCheck();" onchange="Framingham08_M_Patient_fx();" aria-label="Use this input box to enter the value Age"></td>
+<td align="left" valign="top"> <select name="Age_unit" onchange="Framingham08_M_Patient_fx(); minMaxCheck();" style="width:115px;" class="medCalcFontSelect" aria-label="Use this pulldown selector to set the unit of measure for the value Age">
+<option value="1|0|yr" selected="selected">yr</option>
+</select></td></tr>
+
+<tr><td align="right" width="42%"><span class="medCalcFontOneBold">Systolic blood pressure</span> </td>
+<td align="left" valign="top" nowrap="nowrap" width="5%">&nbsp; <input type="text" name="Systolic_blood_pressure_param" size="6" value="" onblur="Framingham08_M_Patient_fx(); minMaxCheck();" onchange="Framingham08_M_Patient_fx();" aria-label="Use this input box to enter the value Systolic blood pressure"></td>
+<td align="left" valign="top"> <select name="Systolic_blood_pressure_unit" onchange="Framingham08_M_Patient_fx(); minMaxCheck();" style="width:115px;" class="medCalcFontSelect" aria-label="Use this pulldown selector to set the unit of measure for the value Systolic blood pressure">
+<option value="1|0|mmHg" selected="selected">mmHg</option>
+<tr><td align="right" width="42%"><span class="medCalcFontOneBold">Total cholesterol</span> </td>
+<td align="left" valign="top" nowrap="nowrap" width="5%">&nbsp; <input type="text" name="Total_cholesterol_param" size="6" value="" onblur="Framingham08_M_Patient_fx(); minMaxCheck();" onchange="Framingham08_M_Patient_fx();" aria-label="Use this input box to enter the value Total cholesterol"></td>
+<td align="left" valign="top"> <select name="Total_cholesterol_unit" onchange="Framingham08_M_Patient_fx(); minMaxCheck();" style="width:115px;" class="medCalcFontSelect" aria-label="Use this pulldown selector to set the unit of measure for the value Total cholesterol">
+<option value="1|0|mg/dL_Chol" selected="selected">mg/dL</option>
+
+</select></td></tr>
+
+<tr><td align="right" width="42%"><span class="medCalcFontOneBold">HDL cholesterol</span> </td>
+<td align="left" valign="top" nowrap="nowrap" width="5%">&nbsp; <input type="text" name="HDL_cholesterol_param" size="6" value="" onblur="Framingham08_M_Patient_fx(); minMaxCheck();" onchange="Framingham08_M_Patient_fx();" aria-label="Use this input box to enter the value HDL cholesterol"></td>
+<td align="left" valign="top"> <select name="HDL_cholesterol_unit" onchange="Framingham08_M_Patient_fx(); minMaxCheck();" style="width:115px;" class="medCalcFontSelect" aria-label="Use this pulldown selector to set the unit of measure for the value HDL cholesterol">
+<option value="1|0|mg/dL_HDL" selected="selected">mg/dL</option>
+
+</select></td></tr>
+
+<tr><td align="right"><span class="medCalcFontOneBold">On blood pressure medication</span></td>
+<td colspan="2" align="left">&nbsp;&nbsp;<select name="On_blood_pressure_medication_pulldown" onchange="Framingham08_M_Patient_fx();" class="medCalcFontSelect" style="width:170px;">
+<option value="1.93303">No (1.93303)</option>
+<option value="1.99881">Yes (1.99881)</option>
+
+</select>
+</td></tr>
+<tr><td align="right"><span class="medCalcFontOneBold">Cigarette smoker</span></td>
+<td colspan="2" align="left">&nbsp;&nbsp;<select name="Cigarette_smoker_pulldown" onchange="Framingham08_M_Patient_fx();" class="medCalcFontSelect" style="width:170px;">
+<option value="0">No (0)</option>
+<option value="0.65451">Yes (0.65451)</option>
+
+</select>
+</td></tr>
+<tr><td align="right"><span class="medCalcFontOneBold">Diabetes present</span></td>
+<td colspan="2" align="left">&nbsp;&nbsp;<select name="Diabetes_present_pulldown" onchange="Framingham08_M_Patient_fx();" class="medCalcFontSelect" style="width:170px;">
+<option value="0">No (0)</option>
+<option value="0.57367">Yes (0.57367)</option>
+
+</select>
+</td></tr>
+
+</tbody></table>
+
+</center>
+<br>&nbsp;<br><center><span class="medCalcFontIO">Results<span id="inputchk" class="medCalcFontOne"><br>&nbsp;<br><b>Important:</b> Inputs must be complete to perform calculation. <br></span></span>
+
+<br>&nbsp;<br>
+<table summary="EBMcalc Table" class="medCalcResultBox" cellpadding="4">
+<tbody><tr><td colspan="3">&nbsp;<br></td></tr>
+<tr>
+<td align="right"><span class="medCalcFontResultParam">Risk</span></td>
+<td valign="top" nowrap="nowrap">&nbsp; <input type="text" name="Risk_param" size="6" aria-readonly="true" aria-label="This output box will display the calculated value Risk"></td>
+<td valign="top" align="left"><span class="medCalcFontResultParam">
+<select name="Risk_unit" onchange="Framingham08_M_Patient_fx();" style="width:115px;" class="medCalcFontSelect" aria-label="Use this pulldown selector to set the unit of measure for the result value Risk">
+<option value="1|0|%" selected="selected">%</option>
+<option value="100|0|fraction">fraction</option>
+<option value="100|0|ratio">ratio</option>
+</select>
+</span></td>
+</tr>
+<tr><td colspan="3">&nbsp;<br></td></tr>
+</tbody></table>
+</center><br>&nbsp;<br>
+<div id="calc_buttons">
+<center>
+<span class="medCalcFontOne">
+<input type="reset" name="resetbutton" value="Reset form">
+</span>
+</center>
+</div>
+</div><div id="pretextrefs">
+&nbsp;
+</div>
+<div id="calc_tables_above_notes">
+</div>
+<br>&nbsp;<br>
+
+<div id="calc_equation">
+<div class="medCalcFontTwo">
+	</div>
+</div><script id="desktopCalcScriptJs">//@ sourceURL=calculatorScript
+
+/* <![CDATA[ */
+
+var lastChar = '';
+
+function log(i){
+return Math.log(i) * Math.LOG10E;   
+}
+
+function ln(i){
+return Math.log(i);
+}
+
+function sq(i){
+return i * i;
+}
+
+function sqr(i){
+return Math.sqrt(i);
+}
+
+
+function power(x,y){
+return Math.pow(x,y);
+}
+
+function eTo(x){
+return Math.exp(x);
+}
+
+
+function fixDP(r, dps) {
+if (isNaN(r)) return "NaN";
+var msign = '';
+if (r < 0) msign = '-';
+x = Math.abs(r);
+if (x > Math.pow(10, 21)) return msign + x.toString();
+var m = Math.round(x * Math.pow(10, dps)).toString();
+if (dps == 0) return msign + m;
+while (m.length <= dps) m = "0" + m;
+return msign + m.substring(0, m.length - dps) + "." + m.substring(m.length - dps);
+}
+
+function alertNaN(){
+alert('This field is improperly formatted. You may only input the digits 0-9 and a decimal point.');  
+doCalc = false; 
+clrResults();
+}
+function validNumberField(event) {
+var field = event.target;
+if(field && field != 'undefined' && field.attributes.type.nodeValue && (field.attributes.type.nodeValue == 'number')) {
+var val = field.value;
+var charCode = event.charCode;
+var key = String.fromCharCode(charCode);
+if(charCode == 0 || charCode == 13) {
+  return true;
+}
+if(key == ' ') {
+alert('Numeric field cannot contain spaces.');
+  return false;
+}		
+if(key == '.') { return validDecimalPoint(val, key); }
+if(key == '-') { return validMinus(val, key); }
+
+if(isNaN(parseInt(key))) {
+alertNaN();
+return false;
+}
+return validFloat(val, key);
+}
+return true;
+}
+function validDecimalPoint(val, key) {
+if(val.length == 0 && lastChar != '.') {
+  lastChar = '.';
+  return true;
+}
+if(val.indexOf('.') >= 0 || lastChar == '.') {
+ alertNaN();
+ return false;
+}
+if(validFloat(val, key)) {
+ lastChar = key;
+ return true;
+}
+lastChar = '';
+return false;
+}
+function validMinus(val, key) {
+if(val.length == 0) {
+  return true;
+}
+if(val.length > 1) {
+ alertNaN();
+ return false;
+}
+return validFloat(val, key);
+}
+function validFloat(val, key) {
+var currentVal = parseFloat(val + key);
+if(isNaN(val + key) || isNaN(currentVal)) {
+alertNaN();
+return false;
+}
+return true;
+}
+function formKeyDown(event) {var field = event.target;
+
+if(field && field != 'undefined' && field.attributes.type.nodeValue && (field.attributes.type.nodeValue == 'number')) {
+  var val = field.value;
+  var keyCode = event.keyCode;
+  if(keyCode == 8 || keyCode == 127) {
+    // backspace or delete
+    if(lastChar == '.') {
+      lastChar = '';
+    }
+    if(field.value.length == 3 && field.value[0] == '0' && field.value[1] == '.') {
+      // this handles a backspace on an input like ".5", which is saved internally as "0.5"
+      //   otherwise, if you leave the field after the backspace, it retains "0.5" as the value, most likely an iOS bug
+      field.value = ''; 
+    }
+  }
+}
+clrResults();
+}
+function clrValue(field) {
+ field.value = '';
+ lastChar = '';
+}
+var currenttimeout;
+function resetInTime(){
+if (currenttimeout) clearTimeout(currenttimeout);
+currenttimeout = setTimeout('minMaxCheck();', 3000);
+}var curelement;
+function togCB(thisid){
+thischeckbox = document.getElementById(thisid);
+if (thischeckbox.checked){ thischeckbox.checked = false; }
+else { thischeckbox.checked = true; }
+Framingham08_M_Patient_fx();
+}
+function setRB(thisid){
+document.getElementById(thisid).checked = true;
+Framingham08_M_Patient_fx();
+}
+var calctxt = ''; 
+var xmltxt = ''; 
+var xmlresult = '';
+var htmtxt = ''; 
+var postNow = false;
+var printing = false;
+var interptxt = '';
+var interphtm = '';
+var interpxml = '';
+var rbchk = false;
+var inputchktxt = '<br />&nbsp;<br /><b>Important:</b> Inputs must be complete to perform calculation. <br />'
+function Framingham08_M_Patient_fx() {
+with(document.Framingham08_M_Patient_form){
+doCalc = true;
+param_value = parseFloat(Age_param.value);
+if (isNaN(param_value)){param_value = ""; doCalc = false;}
+unit_parts = Age_unit.options[Age_unit.selectedIndex].value.split('|');
+Age = param_value * parseFloat(unit_parts[0]) + parseFloat(unit_parts[1]);
+param_value = parseFloat(Systolic_blood_pressure_param.value);
+if (isNaN(param_value)){param_value = ""; doCalc = false;}
+unit_parts = Systolic_blood_pressure_unit.options[Systolic_blood_pressure_unit.selectedIndex].value.split('|');
+Systolic_blood_pressure = param_value * parseFloat(unit_parts[0]) + parseFloat(unit_parts[1]);
+param_value = parseFloat(Total_cholesterol_param.value);
+if (isNaN(param_value)){param_value = ""; doCalc = false;}
+unit_parts = Total_cholesterol_unit.options[Total_cholesterol_unit.selectedIndex].value.split('|');
+Total_cholesterol = param_value * parseFloat(unit_parts[0]) + parseFloat(unit_parts[1]);
+param_value = parseFloat(HDL_cholesterol_param.value);
+if (isNaN(param_value)){param_value = ""; doCalc = false;}
+unit_parts = HDL_cholesterol_unit.options[HDL_cholesterol_unit.selectedIndex].value.split('|');
+HDL_cholesterol = param_value * parseFloat(unit_parts[0]) + parseFloat(unit_parts[1]);
+On_blood_pressure_medication = parseFloat(On_blood_pressure_medication_pulldown.options[On_blood_pressure_medication_pulldown.selectedIndex].value);
+Cigarette_smoker = parseFloat(Cigarette_smoker_pulldown.options[Cigarette_smoker_pulldown.selectedIndex].value);
+Diabetes_present = parseFloat(Diabetes_present_pulldown.options[Diabetes_present_pulldown.selectedIndex].value);
+dp = 1;
+Risk_Factors =  (ln(Age) * 3.06117) + (ln(Total_cholesterol) * 1.12370) - (ln(HDL_cholesterol) * 0.93263) +  (ln(Systolic_blood_pressure) * On_blood_pressure_medication) + Cigarette_smoker + Diabetes_present - 23.9802;
+Risk =  100 * (1 - power(0.88936, eTo(Risk_Factors)));
+unit_parts = Risk_unit.options[Risk_unit.selectedIndex].value.split('|');
+if (doCalc) Risk_param.value = fixDP((Risk - parseFloat(unit_parts[1])) / parseFloat(unit_parts[0]), dp);
+}
+if (doCalc) document.getElementById('inputchk').innerHTML = '';
+else document.getElementById('inputchk').innerHTML = inputchktxt;
+}
+function minMaxCheck(){
+if (printing) return;
+with(document.Framingham08_M_Patient_form){
+if (Age_param.value && isNaN(Age_param.value)){ clrValue(Age_param); alertNaN('Age'); }
+if (Age_param.value && (Age < (10 - 0.00001))) {
+Age = 0;
+clrValue(Age_param);
+clrResults();
+doCalc = false;
+ alert("The minimum value for Age is 10 yr.");
+}
+if (Age_param.value && Age > 74) {
+clrValue(Age_param);
+clrResults();
+Age = 0;
+doCalc = false;
+ alert("The maximum value for Age is 74 yr.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (Systolic_blood_pressure_param.value && isNaN(Systolic_blood_pressure_param.value)){ clrValue(Systolic_blood_pressure_param); alertNaN('Systolic blood pressure'); }
+if (Systolic_blood_pressure_param.value && (Systolic_blood_pressure < (90 - 0.00001))) {
+Systolic_blood_pressure = 0;
+clrValue(Systolic_blood_pressure_param);
+clrResults();
+doCalc = false;
+ alert("The minimum value for Systolic blood pressure is 90 mmHg.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (Systolic_blood_pressure_param.value && Systolic_blood_pressure > 200) {
+clrValue(Systolic_blood_pressure_param);
+clrResults();
+Systolic_blood_pressure = 0;
+doCalc = false;
+ alert("The maximum value for Systolic blood pressure is 200 mmHg.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (Total_cholesterol_param.value && isNaN(Total_cholesterol_param.value)){ clrValue(Total_cholesterol_param); alertNaN('Total cholesterol'); }
+if (Total_cholesterol_param.value && (Total_cholesterol < (10 - 0.00001))) {
+Total_cholesterol = 0;
+clrValue(Total_cholesterol_param);
+clrResults();
+doCalc = false;
+ alert("The minimum value for Total cholesterol is 10 mg/dL.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (Total_cholesterol_param.value && Total_cholesterol > 500) {
+clrValue(Total_cholesterol_param);
+clrResults();
+Total_cholesterol = 0;
+doCalc = false;
+ alert("The maximum value for Total cholesterol is 500 mg/dL.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (HDL_cholesterol_param.value && isNaN(HDL_cholesterol_param.value)){ clrValue(HDL_cholesterol_param); alertNaN('HDL cholesterol'); }
+if (HDL_cholesterol_param.value && (HDL_cholesterol < (0 - 0.00001))) {
+HDL_cholesterol = 0;
+clrValue(HDL_cholesterol_param);
+clrResults();
+doCalc = false;
+ alert("The minimum value for HDL cholesterol is 0 mg/dL.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+if (HDL_cholesterol_param.value && HDL_cholesterol > 100) {
+clrValue(HDL_cholesterol_param);
+clrResults();
+HDL_cholesterol = 0;
+doCalc = false;
+ alert("The maximum value for HDL cholesterol is 100 mg/dL.\nIf you are specifying a value with a different unit, change the unit selector first.");
+}
+}
+}
+function clrResults(){
+with(document.Framingham08_M_Patient_form){
+Risk_param.value = '';
+}
+}
+var Age = null,
+Systolic_blood_pressure = null,
+Total_cholesterol = null,
+HDL_cholesterol = null,
+On_blood_pressure_medication = null,
+Cigarette_smoker = null,
+Diabetes_present = null,
+Risk_Factors = null,
+Risk = null,
+param_value = null;
+/* ]]> */
+</script>
+</body>
+</html>
